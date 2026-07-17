@@ -1,10 +1,17 @@
+// frontend/src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import AppRoutes from './routes';
+import './App.css'; // or your global styles
+
 function App() {
   return (
-    <div className="min-h-screen bg-blue-600 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-white">
-        Tailwind CSS Working 🎉
-      </h1>
-    </div>
+    <Router>
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
+    </Router>
   );
 }
 
